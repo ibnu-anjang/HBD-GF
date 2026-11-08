@@ -15,7 +15,7 @@ window.HBD_CONFIG = {
   // MODE TESTING / PREVIEW:
   // - `true`  = Hitung mundur 5 detik (buat kamu ngetes sekarang).
   // - `false` = Mengikuti jam asli 9 November 2026 jam 00:00:00 WIB.
-  previewMode: true,
+  previewMode: false,
   previewSeconds: 5,
 
   // --------------------------------------------------------------------------
@@ -99,7 +99,7 @@ window.HBD_CONFIG = {
     moments: [
       {
         id: "momen-01",
-        title: "Momen 01", // <-- Ganti nama momen ini sesukamu
+        title: "First Date Kita",
         folder: "assets/moments/momen-01",
         cover: "assets/moments/momen-01/foto-01.jpeg",
         photos: [
@@ -113,7 +113,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-02",
-        title: "Momen 02", // <-- Ganti nama momen ini sesukamu
+        title: "Lucu Bareng Kamu",
         folder: "assets/moments/momen-02",
         cover: "assets/moments/momen-02/foto-01.jpeg",
         photos: [
@@ -124,7 +124,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-03",
-        title: "Momen 03", // <-- Ganti nama momen ini sesukamu
+        title: "Cerita Sekolah Kita",
         folder: "assets/moments/momen-03",
         cover: "assets/moments/momen-03/foto-01.jpeg",
         photos: [
@@ -138,7 +138,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-04",
-        title: "Momen 04", // <-- Ganti nama momen ini sesukamu
+        title: "Senyum Favoritku",
         folder: "assets/moments/momen-04",
         cover: "assets/moments/momen-04/foto-01.jpeg",
         photos: [
@@ -147,7 +147,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-05",
-        title: "Momen 05", // <-- Ganti nama momen ini sesukamu
+        title: "Quality Time",
         folder: "assets/moments/momen-05",
         cover: "assets/moments/momen-05/foto-01.jpeg",
         photos: [
@@ -159,7 +159,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-06",
-        title: "Momen 06", // <-- Ganti nama momen ini sesukamu
+        title: "Movie Date",
         folder: "assets/moments/momen-06",
         cover: "assets/moments/momen-06/foto-01.jpeg",
         photos: [
@@ -169,7 +169,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-07",
-        title: "Momen 07", // <-- Ganti nama momen ini sesukamu
+        title: "Jajan Bareng",
         folder: "assets/moments/momen-07",
         cover: "assets/moments/momen-07/foto-01.jpeg",
         photos: [
@@ -179,7 +179,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-08",
-        title: "Momen 08", // <-- Ganti nama momen ini sesukamu
+        title: "Jalan-Jalan Kita",
         folder: "assets/moments/momen-08",
         cover: "assets/moments/momen-08/foto-01.jpeg",
         photos: [
@@ -190,7 +190,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-09",
-        title: "Momen 09", // <-- Ganti nama momen ini sesukamu
+        title: "Motoran Bareng",
         folder: "assets/moments/momen-09",
         cover: "assets/moments/momen-09/foto-01.jpeg",
         photos: [
@@ -199,7 +199,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-10",
-        title: "Momen 10", // <-- Ganti nama momen ini sesukamu
+        title: "Random Date",
         folder: "assets/moments/momen-10",
         cover: "assets/moments/momen-10/foto-01.jpeg",
         photos: [
@@ -209,7 +209,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-11",
-        title: "Momen 11", // <-- Ganti nama momen ini sesukamu
+        title: "Mirror Selfie",
         folder: "assets/moments/momen-11",
         cover: "assets/moments/momen-11/foto-01.jpeg",
         photos: [
@@ -223,7 +223,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-12",
-        title: "Momen 12", // <-- Ganti nama momen ini sesukamu
+        title: "Night Date",
         folder: "assets/moments/momen-12",
         cover: "assets/moments/momen-12/foto-01.jpeg",
         photos: [
@@ -243,7 +243,7 @@ window.HBD_CONFIG = {
       },
       {
         id: "momen-13",
-        title: "Momen 13", // <-- Ganti nama momen ini sesukamu
+        title: "Cantiknya Aku",
         folder: "assets/moments/momen-13",
         cover: "assets/moments/momen-13/foto-01.jpeg",
         photos: [
@@ -275,19 +275,19 @@ window.HBD_CONFIG = {
     buttonText: "BIRTHDAY WISHES",
     videos: [
       {
-        title: "Video Momen 1", // <-- Ganti judul tab video 1
+        title: "First Date",
         src: "assets/video/video-01-momen-01.mp4"
       },
       {
-        title: "Video Momen 2", // <-- Ganti judul tab video 2
+        title: "Sweet Moment",
         src: "assets/video/video-02-momen-04.mp4"
       },
       {
-        title: "Video Momen 3", // <-- Ganti judul tab video 3
+        title: "Our Laughs",
         src: "assets/video/video-03-momen-13.mp4"
       },
       {
-        title: "Video Momen 4", // <-- Ganti judul tab video 4
+        title: "Always You",
         src: "assets/video/video-04-momen-13.mp4"
       }
     ]
