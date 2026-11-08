@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Her Special Day</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e87a9f'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Starfield & Heart Bokeh Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Soft Center Radial Vignette -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Main Multi-Scene Container -->
+  <main id="app-stage" class="app-stage" aria-live="polite">
+
+    <!-- ==================================================================
+         SCENE 1: COUNTDOWN ("MENGHITUNG HARI")
+         ================================================================== -->
+    <section id="scene-1" class="scene is-active" aria-label="Hitung Mundur Ulang Tahun">
+      <div class="scene-inner scene-countdown">
+        <p class="eyebrow-ornament">
+          <span class="ornament-line" aria-hidden="true"></span>
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          <span id="s1-eyebrow">MENGHITUNG HARI</span>
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          <span class="ornament-line" aria-hidden="true"></span>
+        </p>
+
+        <h1 class="hero-heading">
+          <em id="s1-title-italic" class="serif-italic">Her Special Day</em>
+          <span id="s1-title-regular" class="serif-block">is Coming</span>
+        </h1>
+
+        <p class="subtitle-text">
+          <span id="s1-subtitle">Sesuatu yang indah sedang menunggu untukmu</span>
+          <svg class="inline-heart-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </p>
+
+        <div class="ornament-divider" aria-hidden="true">
+          <span class="divider-wing"></span>
+          <svg class="divider-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="divider-wing"></span>
+        </div>
+
+        <!-- 4 Kotak Timer -->
+        <div class="countdown-grid" role="timer" aria-atomic="true">
+          <div class="time-unit">
+            <div class="time-card">
+              <span id="cd-days" class="time-value">00</span>
+            </div>
+            <span class="time-label">HARI</span>
+          </div>
+          <div class="time-unit">
+            <div class="time-card">
+              <span id="cd-hours" class="time-value">00</span>
+            </div>
+            <span class="time-label">JAM</span>
+          </div>
+          <div class="time-unit">
+            <div class="time-card">
+              <span id="cd-minutes" class="time-value">00</span>
+            </div>
+            <span class="time-label">MENIT</span>
+          </div>
+          <div class="time-unit">
+            <div class="time-card">
+              <span id="cd-seconds" class="time-value">00</span>
+            </div>
+            <span class="time-label">DETIK</span>
+          </div>
+        </div>
+
+        <!-- Status & CTA -->
+        <div class="countdown-status-wrap">
+          <p id="s1-status-line" class="status-caption">
+            <svg id="s1-status-icon" class="inline-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"/>
+            </svg>
+            <span id="s1-status-text">Beberapa detik lagi...</span>
+            <svg class="inline-heart-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </p>
+
+          <button id="btn-open-gift" type="button" class="cta-btn is-locked" aria-disabled="true">
+            <svg id="btn-gift-icon-lock" class="btn-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+            </svg>
+            <span id="btn-open-gift-label">TUNGGU SAMPAI WAKTUNYA</span>
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+            </svg>
+          </button>
+
+          <p id="s1-hint-text" class="locked-hint">Sabar ya, belum waktunya...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 2: BUKA KADO ("ADA SESUATU UNTUKMU")
+         ================================================================== -->
+    <section id="scene-2" class="scene" aria-label="Buka Hadiah Ulang Tahun" hidden>
+      <div class="scene-inner scene-giftbox">
+        <p class="eyebrow-ornament">
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          <span id="s2-eyebrow">ADA SESUATU UNTUKMU</span>
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+        </p>
+
+        <button id="gift-trigger-btn" type="button" class="gift-stage-btn" aria-label="Klik untuk membuka kotak hadiah">
+          <span class="gift-halo" aria-hidden="true"></span>
+          <!-- Custom 3D-style Vector Gift Box with Animated Lid & Burst -->
+          <svg class="gift-svg" viewBox="0 0 240 240" role="img" aria-label="Kotak Hadiah">
+            <defs>
+              <radialGradient id="giftGlowGrad" cx="50%" cy="55%" r="50%">
+                <stop offset="0%" stop-color="#ff9ebb" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#ff9ebb" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="boxBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#562238" />
+                <stop offset="50%" stop-color="#3a1525" />
+                <stop offset="100%" stop-color="#240b16" />
+              </linearGradient>
+              <linearGradient id="boxLidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6e2d49" />
+                <stop offset="100%" stop-color="#42182b" />
+              </linearGradient>
+              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffe5ec" />
+                <stop offset="50%" stop-color="#f3a6c0" />
+                <stop offset="100%" stop-color="#d47294" />
+              </linearGradient>
+            </defs>
+
+            <!-- Inner Light Burst when opened -->
+            <circle class="gift-inner-light" cx="120" cy="125" r="78" fill="url(#giftGlowGrad)" />
+
+            <!-- Sparkle Rays around box -->
+            <g class="gift-rays" stroke="#f7cad8" stroke-width="2" stroke-linecap="round">
+              <line x1="120" y1="26" x2="120" y2="14" />
+              <line x1="65" y1="45" x2="54" y2="34" />
+              <line x1="175" y1="45" x2="186" y2="34" />
+              <line x1="42" y1="95" x2="28" y2="92" />
+              <line x1="198" y1="95" x2="212" y2="92" />
+            </g>
+
+            <!-- Box Base -->
+            <g class="gift-base-group">
+              <rect x="56" y="106" width="128" height="92" rx="10" fill="url(#boxBodyGrad)" stroke="#a85576" stroke-width="1.5" />
+              <!-- Vertical & Horizontal Ribbon on Base -->
+              <rect x="111" y="106" width="18" height="92" fill="url(#ribbonGrad)" />
+              <rect x="56" y="143" width="128" height="16" fill="url(#ribbonGrad)" opacity="0.9" />
+            </g>
+
+            <!-- Box Lid + Ribbon Bow (Animated on Open) -->
+            <g class="gift-lid-group">
+              <!-- Ribbon Bow Loops -->
+              <path d="M120 82 C102 54, 72 62, 84 82 C92 92, 112 86, 120 82 Z" fill="url(#ribbonGrad)" />
+              <path d="M120 82 C138 54, 168 62, 156 82 C148 92, 128 86, 120 82 Z" fill="url(#ribbonGrad)" />
+              <!-- Ribbon Tails -->
+              <path d="M116 82 L96 102 L106 105 L120 86 Z" fill="#f3a6c0" />
+              <path d="M124 82 L144 102 L134 105 L120 86 Z" fill="#f3a6c0" />
+              <!-- Lid Box -->
+              <rect x="48" y="80" width="144" height="28" rx="7" fill="url(#boxLidGrad)" stroke="#c76d91" stroke-width="1.5" />
+              <rect x="110" y="80" width="20" height="28" fill="url(#ribbonGrad)" />
+              <!-- Bow Knot Center -->
+              <circle cx="120" cy="81" r="7" fill="#fff0f5" />
+            </g>
+          </svg>
+        </button>
+
+        <p class="gift-instruction">
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          <span id="s2-instruction">Klik untuk membuka hadiahmu</span>
+          <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 3: HERO LANDING ("YOUR SPECIAL DAY") + FLOATING POLAROIDS
+         ================================================================== -->
+    <section id="scene-3" class="scene" aria-label="Sambutan Hari Spesial" hidden>
+      <div class="scene-inner scene-hero">
+        <!-- Floating Polaroids Top Cluster (Mobile: Melayang di atas teks; Desktop: Kiri & Kanan) -->
+        <div id="hero-polaroids-top" class="hero-polaroid-cluster cluster-top" aria-label="Koleksi Foto Pembuka Atas"></div>
+
+        <!-- Center Editorial Hero Copy -->
+        <div class="hero-center-copy">
+          <p class="eyebrow-ornament">
+            <span class="ornament-line" aria-hidden="true"></span>
+            <svg class="divider-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span id="s3-eyebrow">A LOVE LETTER FOR YOU</span>
+            <svg class="divider-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span class="ornament-line" aria-hidden="true"></span>
+          </p>
+
+          <h2 class="hero-display-title">
+            <span id="s3-title-line1" class="display-line">Your</span>
+            <span id="s3-title-line2" class="display-line">Special Day</span>
+          </h2>
+
+          <p id="s3-subtitle" class="hero-italic-sub">Created with love, just for you</p>
+
+          <div class="ornament-divider" aria-hidden="true">
+            <span class="divider-wing"></span>
+            <span class="ornament-gem">&#10022;</span>
+            <span class="divider-wing"></span>
+          </div>
+
+          <button id="btn-read-letter" type="button" class="cta-btn is-ready">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span id="s3-btn-label">READ MY LETTER</span>
+          </button>
+        </div>
+
+        <!-- Secondary Floating Polaroids (Desktop Right Side / Optional Bottom Accent) -->
+        <div id="hero-polaroids-bottom" class="hero-polaroid-cluster cluster-bottom" aria-label="Koleksi Foto Pembuka Bawah"></div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 4: SURAT ULANG TAHUN ("HAPPY BIRTHDAY" TYPEWRITER)
+         ================================================================== -->
+    <section id="scene-4" class="scene" aria-label="Surat Ulang Tahun" hidden>
+      <div class="scene-inner scene-letter">
+        <header class="section-header">
+          <h2 id="s4-title" class="section-serif-title">Happy Birthday</h2>
+          <div class="ornament-divider" aria-hidden="true">
+            <span class="divider-wing"></span>
+            <span class="ornament-gem">&#10022;</span>
+            <span class="divider-wing"></span>
+          </div>
+        </header>
+
+        <!-- Scrollable Glass Letter Box -->
+        <article id="letter-scroll-box" class="letter-card" tabindex="0" aria-label="Isi Surat Ulang Tahun">
+          <p class="letter-greeting">
+            <span id="s4-greeting-text"></span>
+            <svg id="s4-greeting-heart" class="inline-heart-svg" viewBox="0 0 24 24" aria-hidden="true" hidden>
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </p>
+          <div id="letter-typed-body" class="letter-body"></div>
+        </article>
+
+        <div class="letter-actions">
+          <button id="btn-skip-typing" type="button" class="text-link-btn">
+            Tampilkan Semua Surat
+          </button>
+          <button id="btn-to-memories" type="button" class="cta-btn is-ready">
+            <span id="s4-btn-label">OUR MEMORIES</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 5: GALERI FOTO POLAROID ("OUR MEMORIES")
+         ================================================================== -->
+    <section id="scene-5" class="scene" aria-label="Galeri Kenangan Kita" hidden>
+      <div class="scene-inner scene-memories">
+        <header class="section-header">
+          <h2 id="s5-title" class="section-serif-title">Our Memories</h2>
+          <p class="eyebrow-ornament">
+            <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+            <em id="s5-subtitle" class="serif-italic-sub">every moment captured in love</em>
+            <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          </p>
+        </header>
+
+        <!-- Polaroid Grid (2 Columns on Mobile, 4 Columns on Desktop) -->
+        <div id="memories-grid" class="memories-polaroid-grid" role="list"></div>
+
+        <div class="section-footer-cta">
+          <button id="btn-to-video" type="button" class="cta-btn is-ready">
+            <span id="s5-btn-label">WATCH VIDEO</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 6: PESAN VIDEO PORTRAIT ("A MOMENT FOR YOU")
+         ================================================================== -->
+    <section id="scene-6" class="scene" aria-label="Pesan Video Spesial" hidden>
+      <div class="scene-inner scene-video">
+        <header class="section-header">
+          <h2 id="s6-title" class="section-serif-title">A Moment For You</h2>
+          <p class="eyebrow-ornament">
+            <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+            <em id="s6-subtitle" class="serif-italic-sub">a special video message</em>
+            <span class="ornament-gem" aria-hidden="true">&#10022;</span>
+          </p>
+        </header>
+
+        <!-- Multi-Video Playlist Switcher (4 Videos) -->
+        <div id="video-playlist-tabs" class="video-playlist-tabs" role="tablist" aria-label="Pilih Video Kenangan"></div>
+
+        <!-- Custom Portrait Video Frame -->
+        <div id="video-frame-card" class="video-card is-portrait">
+          <div class="video-viewport">
+            <video id="memory-video" class="custom-video-el" playsinline preload="metadata"></video>
+
+            <!-- Honest Placeholder State if video file is not yet placed in assets/video/ -->
+            <div id="video-placeholder-state" class="video-placeholder-state" hidden>
+              <div class="placeholder-badge">[VIDEO BELUM DIISI]</div>
+              <p class="placeholder-title">Tempat Video Portrait (9:16)</p>
+              <p class="placeholder-desc">
+                Simpan video kamu di <code>assets/video/moment.mp4</code> atau ubah path di <code>config.js</code>.
+              </p>
+              <p class="placeholder-note">
+                Klik tombol Play di bawah untuk mengetes simulasi pemutaran &amp; fitur Auto-Pause Musik Latar.
+              </p>
+            </div>
+
+            <!-- Center Big Rose Play Button Overlay -->
+            <button id="video-center-play" type="button" class="video-center-play-btn" aria-label="Putar atau Jeda Video">
+              <svg id="video-center-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Custom Bottom Control Bar (1:1 with Reference Video) -->
+          <div class="video-control-bar">
+            <button id="video-bar-toggle" type="button" class="video-mini-btn" aria-label="Putar atau Jeda">
+              <svg id="video-bar-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+            <span id="video-time-label" class="video-time-text">0:00 / 0:10</span>
+            <input
+              id="video-seek-slider"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              class="video-seek-slider"
+              aria-label="Geser waktu video"
+            />
+            <button id="video-fullscreen-btn" type="button" class="video-mini-btn" aria-label="Layar Penuh (Fullscreen)">
+              <svg id="video-fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="section-footer-cta">
+          <button id="btn-to-wishes" type="button" class="cta-btn is-ready">
+            <span id="s6-btn-label">BIRTHDAY WISHES</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 7: BIRTHDAY WISHES CARD
+         ================================================================== -->
+    <section id="scene-7" class="scene" aria-label="Doa dan Harapan Ulang Tahun" hidden>
+      <div class="scene-inner scene-wishes">
+        <article class="wishes-card">
+          <span class="card-corner corner-tl" aria-hidden="true"></span>
+          <span class="card-corner corner-tr" aria-hidden="true"></span>
+          <span class="card-corner corner-bl" aria-hidden="true"></span>
+          <span class="card-corner corner-br" aria-hidden="true"></span>
+
+          <h2 id="s7-title" class="wishes-title">Birthday Wishes</h2>
+
+          <p class="wishes-sub">
+            <span id="s7-subtitle">Happy Birthday, my love</span>
+            <svg class="inline-heart-svg is-rose" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </p>
+
+          <div class="ornament-divider" aria-hidden="true">
+            <span class="divider-wing"></span>
+            <span class="ornament-gem">&#10022;</span>
+            <span class="divider-wing"></span>
+          </div>
+
+          <p id="s7-message" class="wishes-paragraph"></p>
+
+          <div class="wishes-heart-seal" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+        </article>
+
+        <div class="section-footer-cta">
+          <button id="btn-to-closing" type="button" class="cta-btn is-ready">
+            <span id="s7-btn-label">ONE MORE THING</span>
+            <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SCENE 8: PENUTUP ("HAPPY BIRTHDAY / WITH ALL MY LOVE / ALWAYS & FOREVER")
+         ================================================================== -->
+    <section id="scene-8" class="scene" aria-label="Penutup Ulang Tahun" hidden>
+      <div class="scene-inner scene-closing">
+        <div class="ornament-divider" aria-hidden="true">
+          <span class="divider-wing"></span>
+          <span class="ornament-gem">&#10022;</span>
+          <span class="divider-wing"></span>
+        </div>
+
+        <h2 class="closing-typewriter-heading" aria-live="off">
+          <span id="s8-rotating-text">Happy Birthday</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+        </h2>
+
+        <p id="s8-line1" class="closing-italic-line">Thank you for being part of my life.</p>
+        <p id="s8-line2" class="closing-italic-line">I hope this little gift can make your special day even more beautiful.</p>
+
+        <p class="closing-signoff">
+          <span id="s8-signoff">Forever yours.</span>
+          <svg class="inline-heart-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </p>
+
+        <div class="section-footer-cta">
+          <button id="btn-replay" type="button" class="cta-btn is-outline">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+            </svg>
+            <span id="s8-replay-label">REPLAY FROM START</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Moment Album Lightbox Modal (Swipe / Fade Carousel when clicking a Moment Polaroid) -->
+  <div id="moment-modal" class="moment-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="moment-modal-title" hidden>
+    <div class="moment-modal-dialog">
+      <header class="moment-modal-header">
+        <div class="moment-modal-heading-wrap">
+          <h3 id="moment-modal-title" class="moment-modal-title">Momen 01</h3>
+          <span id="moment-modal-count" class="moment-modal-count">1 / 6</span>
+        </div>
+        <button id="moment-modal-close" type="button" class="moment-modal-close-btn" aria-label="Tutup Album Momen">
+          &times;
+        </button>
+      </header>
+
+      <div id="moment-viewer-stage" class="moment-viewer-stage">
+        <button id="moment-prev-btn" type="button" class="moment-nav-btn is-prev" aria-label="Foto Sebelumnya">
+          &#10094;
+        </button>
+
+        <div class="moment-polaroid-showcase">
+          <div class="moment-showcase-frame">
+            <img id="moment-active-img" class="moment-active-img" src="" alt="" />
+          </div>
+          <p id="moment-active-caption" class="moment-active-caption">Momen 01</p>
+        </div>
+
+        <button id="moment-next-btn" type="button" class="moment-nav-btn is-next" aria-label="Foto Berikutnya">
+          &#10095;
+        </button>
+      </div>
+
+      <footer class="moment-modal-footer">
+        <div id="moment-dots" class="moment-dots"></div>
+        <p id="moment-swipe-hint" class="moment-swipe-hint">Geser kiri / kanan untuk melihat foto lainnya</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Global Floating Music Player Pill (Bottom-Right 1:1 with Video) -->
+  <aside class="music-dock" aria-label="Kontrol Musik Latar">
+    <audio id="bgm-audio" loop preload="auto"></audio>
+    <button id="bgm-toggle-btn" type="button" class="music-pill-btn" aria-pressed="false" aria-label="Putar atau Hentikan Musik Latar">
+      <span class="disc-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+      </span>
+      <span class="eq-bars" aria-hidden="true">
+        <i class="bar b1"></i>
+        <i class="bar b2"></i>
+        <i class="bar b3"></i>
+      </span>
+      <span id="bgm-status-text" class="music-status-label">Paused</span>
+    </button>
+  </aside>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
